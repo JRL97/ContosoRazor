@@ -1,7 +1,10 @@
-﻿namespace ContosoRazor.Models
+﻿using MessagePack;
+
+namespace ContosoRazor.Models
 {
     public class Module
     {
+        
         public int ID { get; set; }
         public string Code { get; set; } = String.Empty;
         public string Title { get; set; } = String.Empty;

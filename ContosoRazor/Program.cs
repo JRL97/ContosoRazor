@@ -1,6 +1,7 @@
 using ContosoRazor.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using static ContosoRazor.Data.Dbinitialiser;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +35,7 @@ using (var scope = app.Services.CreateScope())
 
     var context = services.GetRequiredService<ApplicationDbContext>();
     context.Database.EnsureCreated();
-    // DbInitializer.Initialize(context);
+    DbInitialiser.Initialise(context);
 }
 
 app.UseHttpsRedirection();
